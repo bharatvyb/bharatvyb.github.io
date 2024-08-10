@@ -17,21 +17,27 @@
             color: white;
             padding: 10px 0;
             text-align: center;
+            position: relative;
         }
         header h1 {
             margin: 0;
         }
         nav {
-            background-color: #005599;
+            background-color: rgba(0, 51, 102, 0.9);
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
             overflow: hidden;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            padding-top: 60px;
         }
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
         }
         nav ul li {
             margin: 0;
@@ -41,17 +47,22 @@
             padding: 14px 20px;
             text-decoration: none;
             display: block;
-            text-align: center;
+            text-align: left;
         }
         nav ul li a:hover {
             background-color: #0077cc;
         }
         .menu-icon {
-            display: none;
+            position: fixed;
+            top: 10px;
+            left: 10px;
             font-size: 28px;
             color: white;
             padding: 14px 20px;
             cursor: pointer;
+            z-index: 1100;
+            background-color: #003366;
+            border-radius: 50%;
         }
         .container {
             max-width: 1200px;
@@ -74,22 +85,19 @@
         }
         
         @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                display: none;
-            }
-            nav ul.showing {
-                display: block;
-            }
-            .menu-icon {
-                display: block;
+            nav {
+                width: 200px;
             }
         }
     </style>
     <script>
         function toggleMenu() {
-            const navMenu = document.querySelector('nav ul');
-            navMenu.classList.toggle('showing');
+            const navMenu = document.querySelector('nav');
+            if (navMenu.style.left === "0px") {
+                navMenu.style.left = "-250px";
+            } else {
+                navMenu.style.left = "0px";
+            }
         }
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -99,7 +107,7 @@
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     navigateTo(this.getAttribute('href').substring(1));
-                    toggleMenu(); // Close menu after selection on mobile
+                    toggleMenu(); // Close menu after selection
                 });
             });
         });
