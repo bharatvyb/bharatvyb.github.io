@@ -13,13 +13,12 @@ body {
     position: relative;
     text-align: center;
     color: white;
-    padding: 20px 0;
     overflow: hidden;
 }
 
 .banner-overlay {
     background-color: #127780;
-    height: 100px; /* Set to the height of the space you want to fill with the theme color */
+    height: 100px; /* Height of the space to fill with the theme color */
     width: 100%;
     position: absolute;
     top: 0;
@@ -34,25 +33,7 @@ body {
     max-height: 300px;
     object-fit: cover;
     position: relative;
-}
-
-.banner-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-}
-
-.banner-content h1 {
-    margin: 0;
-    font-size: 36px;
-}
-
-.banner-content p {
-    margin: 0;
-    font-size: 18px;
+    margin: 0 auto; /* Center the image */
 }
 
 .menu-icon {
@@ -122,11 +103,4 @@ footer {
     padding: 10px 0;
     position: fixed;
     bottom: 0;
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    nav {
-        width: 200px;
-    }
-}
+​⬤
