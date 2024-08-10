@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BharatVyb AI Solutions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #005599;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: block;
+        }
+        nav ul li a:hover {
+            background-color: #0077cc;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #003366;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function navigateTo(section) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => sec.style.display = 'none');
+            document.getElementById(section).style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            navigateTo('home'); // Default to home section
+            const menuLinks = document.querySelectorAll('nav ul li a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navigateTo(this.getAttribute('href').substring(1));
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>BharatVyb AI Solutions</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#vybathon">Vybathon</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <section id="home">
+        <h2>Welcome to BharatVyb AI Solutions</h2>
+        <p>At BharatVyb AI Solutions, we are committed to bringing the power of Artificial Intelligence to businesses across various industries. Our innovative solutions are designed to help companies harness the full potential of AI to drive efficiency, enhance decision-making, and create new opportunities.</p>
+    </section>
+
+    <section id="about" style="display:none;">
+        <h2>About Us</h2>
+        <p>BharatVyb AI Solutions is a leading provider of AI-driven solutions. We specialize in developing cutting-edge technologies that empower businesses to leverage data and machine learning to gain a competitive edge. Our team of experts is dedicated to delivering customized solutions that meet the unique needs of each client.</p>
+    </section>
+
+    <section id="services" style="display:none;">
+        <h2>Our Services</h2>
+        <ul>
+            <li><strong>AI Consulting:</strong> We provide expert guidance on how to integrate AI into your business strategy.</li>
+            <li><strong>Custom AI Solutions:</strong> Tailored AI solutions to solve your specific business challenges.</li>
+            <li><strong>Data Analytics:</strong> Advanced data analytics services to help you make informed decisions.</li>
+            <li><strong>Machine Learning Models:</strong> Development and deployment of machine learning models to automate processes and enhance capabilities.</li>
+        </ul>
+    </section>
+
+    <section id="contact" style="display:none;">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to learn more about our services, feel free to reach out to us:</p>
+        <p>Email: <a href="mailto:contact@bharatvyb.com">contact@bharatvyb.com</a></p>
+        <p>Phone: +91 1234 567890</p>
+        <p>Address: 123 AI Street, Tech City, Hyderabad, India</p>
+    </section>
+
+    <section id="vybathon" style="display:none;">
+        <h2>Vybathon Event</h2>
+        <p>The Vybathon Event is our flagship AI competition designed to bring together the brightest minds in the field. Participants will have the opportunity to showcase their skills, collaborate on innovative projects, and compete for exciting prizes.</p>
+        <p>Stay tuned for more details about the next Vybathon Event!</p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 BharatVyb AI Solutions. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
