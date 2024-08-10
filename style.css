@@ -10,25 +10,35 @@ body {
 .banner {
     width: 100%;
     background-color: #127780;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
+    position: relative;
     text-align: center;
     color: white;
     padding: 20px 0;
+    overflow: hidden;
+}
+
+.banner-overlay {
+    background-color: #127780;
+    height: 100px; /* Set to the height of the space you want to fill with the theme color */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .banner img {
     width: 100%;
+    max-width: 1200px;
     height: auto;
-    max-height: 150px; /* Adjust this to fit your design */
+    max-height: 300px;
     object-fit: cover;
+    position: relative;
 }
 
 .banner-content {
     position: absolute;
-    top: 50%; 
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -68,7 +78,7 @@ nav {
     overflow: hidden;
     transition: left 0.3s ease;
     z-index: 1000;
-    padding-top: 200px; /* Adjusted for banner space */
+    padding-top: 300px; /* Adjusted for banner space */
 }
 
 nav ul {
@@ -95,7 +105,7 @@ nav ul li a:hover {
 
 .container {
     max-width: 1200px;
-    margin: 250px auto 20px; /* Adjusted for banner space */
+    margin: 350px auto 20px; /* Adjusted for banner space */
     padding: 20px;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
