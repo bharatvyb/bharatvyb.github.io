@@ -5,6 +5,9 @@ body {
     background-color: #f4f4f4;
     line-height: 1.6;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .banner {
@@ -38,8 +41,8 @@ body {
 
 .menu-icon {
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: 20px; /* Moved down slightly for better user experience */
+    left: 20px;
     font-size: 28px;
     color: white;
     padding: 14px 20px;
@@ -85,15 +88,17 @@ nav ul li a:hover {
 }
 
 .container {
-    max-width: 1200px;
-    margin: 350px auto 20px; /* Adjusted for banner space */
-    padding: 20px;
+    max-width: 900px; /* Set a fixed max-width for consistent sizing */
+    margin: 20px auto; /* Center the container */
+    padding: 40px; /* Uniform padding for content */
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
 }
 
 h2 {
     color: #127780;
+    margin-bottom: 20px; /* Add some space below the headings */
 }
 
 footer {
@@ -101,6 +106,17 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
+    position: relative;
     bottom: 0;
-​⬤
+    width: 100%;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    nav {
+        width: 200px;
+    }
+    .container {
+        padding: 20px; /* Reduced padding on smaller screens */
+    }
+}
