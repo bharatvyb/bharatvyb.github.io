@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>   
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BharatVyb AI Solutions</title>
@@ -30,6 +30,7 @@
             padding: 0;
             margin: 0;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
         }
         nav ul li {
@@ -40,9 +41,17 @@
             padding: 14px 20px;
             text-decoration: none;
             display: block;
+            text-align: center;
         }
         nav ul li a:hover {
             background-color: #0077cc;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            padding: 14px 20px;
+            cursor: pointer;
         }
         .container {
             max-width: 1200px;
@@ -63,12 +72,24 @@
             bottom: 0;
             width: 100%;
         }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+            nav ul.showing {
+                display: block;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
     </style>
     <script>
-        function navigateTo(section) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(sec => sec.style.display = 'none');
-            document.getElementById(section).style.display = 'block';
+        function toggleMenu() {
+            const navMenu = document.querySelector('nav ul');
+            navMenu.classList.toggle('showing');
         }
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -78,15 +99,23 @@
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     navigateTo(this.getAttribute('href').substring(1));
+                    toggleMenu(); // Close menu after selection on mobile
                 });
             });
         });
+
+        function navigateTo(section) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => sec.style.display = 'none');
+            document.getElementById(section).style.display = 'block';
+        }
     </script>
 </head>
 <body>
 
 <header>
     <h1>BharatVyb AI Solutions</h1>
+    <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
 </header>
 
 <nav>
