@@ -4,120 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BharatVyb AI Solutions</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #003366;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-        }
-        nav {
-            background-color: rgba(0, 51, 102, 0.9);
-            position: fixed;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100%;
-            overflow: hidden;
-            transition: left 0.3s ease;
-            z-index: 1000;
-            padding-top: 60px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            margin: 0;
-        }
-        nav ul li a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-        nav ul li a:hover {
-            background-color: #0077cc;
-        }
-        .menu-icon {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            font-size: 28px;
-            color: white;
-            padding: 14px 20px;
-            cursor: pointer;
-            z-index: 1100;
-            background-color: #003366;
-            border-radius: 50%;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #003366;
-        }
-        footer {
-            background-color: #003366;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        
-        @media (max-width: 768px) {
-            nav {
-                width: 200px;
-            }
-        }
-    </style>
-    <script>
-        function toggleMenu() {
-            const navMenu = document.querySelector('nav');
-            if (navMenu.style.left === "0px") {
-                navMenu.style.left = "-250px";
-            } else {
-                navMenu.style.left = "0px";
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            navigateTo('home'); // Default to home section
-            const menuLinks = document.querySelectorAll('nav ul li a');
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    navigateTo(this.getAttribute('href').substring(1));
-                    toggleMenu(); // Close menu after selection
-                });
-            });
-        });
-
-        function navigateTo(section) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(sec => sec.style.display = 'none');
-            document.getElementById(section).style.display = 'block';
-        }
-    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -138,23 +25,25 @@
 
 <div class="container">
     <section id="home">
-        <h2>Welcome to BharatVyb AI Solutions</h2>
-        <p>At BharatVyb AI Solutions, we are committed to bringing the power of Artificial Intelligence to businesses across various industries. Our innovative solutions are designed to help companies harness the full potential of AI to drive efficiency, enhance decision-making, and create new opportunities.</p>
+        <h2>Executive Summary</h2>
+        <p>BharatVyb AI Solutions is an EdTech AI startup focused on developing cost-effective cloud AI ERPs for educational institutions, schools, and colleges. Based in Hyderabad, Telangana, the company aims to leverage AI and machine learning technologies to streamline administrative and educational processes. The initial phase will involve developing a prototype/POC while generating income through paid seminars and hackathons.</p>
     </section>
 
     <section id="about" style="display:none;">
-        <h2>About Us</h2>
-        <p>BharatVyb AI Solutions is a leading provider of AI-driven solutions. We specialize in developing cutting-edge technologies that empower businesses to leverage data and machine learning to gain a competitive edge. Our team of experts is dedicated to delivering customized solutions that meet the unique needs of each client.</p>
+        <h2>Business Description</h2>
+        <p><strong>Business Name:</strong> BharatVyb AI Solutions</p>
+        <p><strong>Industry:</strong> EdTech AI</p>
+        <p><strong>Location:</strong> Hyderabad, Telangana</p>
+        <p><strong>Ownership:</strong> Sole Proprietorship</p>
+        <p><strong>Founder & CEO:</strong> Sai Venkatesh Balabhadra</p>
     </section>
 
     <section id="services" style="display:none;">
-        <h2>Our Services</h2>
-        <ul>
-            <li><strong>AI Consulting:</strong> We provide expert guidance on how to integrate AI into your business strategy.</li>
-            <li><strong>Custom AI Solutions:</strong> Tailored AI solutions to solve your specific business challenges.</li>
-            <li><strong>Data Analytics:</strong> Advanced data analytics services to help you make informed decisions.</li>
-            <li><strong>Machine Learning Models:</strong> Development and deployment of machine learning models to automate processes and enhance capabilities.</li>
-        </ul>
+        <h2>Vision and Mission</h2>
+        <p><strong>Vision:</strong> To revolutionize the educational sector with innovative AI-driven ERP solutions that enhance administrative efficiency and learning outcomes.</p>
+        <p><strong>Mission:</strong> To develop and deploy AI-powered ERP systems tailored for educational institutions, while fostering AI/ML skills among students through seminars and hackathons.</p>
+        <p>BharatVyb AI Solutions addresses the challenge that many technically strong students face in India, where economic factors such as recession make it difficult for them to secure jobs. Our goal is to identify these bright students and provide them with opportunities to work for our AI company, developing SaaS products for the education domain.</p>
+        <p>Winners of our hackathons will be interviewed for internships at BharatVyb AI Solutions, where they will gain real-time experience. Interns who perform exceptionally well may be offered permanent positions. Our mission is to build a company powered by fresh talent, offering them the experience and opportunities they need to succeed.</p>
     </section>
 
     <section id="contact" style="display:none;">
@@ -176,5 +65,6 @@
     <p>&copy; 2024 BharatVyb AI Solutions. All rights reserved.</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
